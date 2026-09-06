@@ -1,1 +1,0 @@
-Replace this folder with your logo.png from the previous version.
