@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Leadership Team - Navodix IT Solutions</title>
+<link href="../assets/images/favicon.png" rel="icon" type="image/png"/>
+<link href="../assets/css/style.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    /* Team page — banner matched to the finalized About Us banner. */
+    .team-banner {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      line-height: 1;
+      background: #ffffff;
+      border-bottom: 1px solid #d9e8f8;
+    }
+    .team-banner-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      margin: 0;
+    }
+    .team-banner-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      pointer-events: none;
+    }
+    .team-banner-content .container {
+      width: 100%;
+      padding-top: 2px;
+    }
+    .team-banner-line {
+      width: 54px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--blue-primary);
+      margin-bottom: 16px;
+    }
+    .team-banner-title {
+      color: var(--blue-header);
+      font-size: clamp(30px, 4.15vw, 56px);
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -1.4px;
+      margin: 0 0 12px;
+    }
+    .team-banner-title span { color: var(--blue-primary); }
+    .team-banner-subtitle {
+      color: #52627a;
+      font-size: clamp(15px, 1.45vw, 22px);
+      line-height: 1.35;
+      letter-spacing: .2px;
+      margin: 0;
+      max-width: 720px;
+    }
+    @media (max-width: 640px) {
+      .team-banner-content { align-items: center; }
+      .team-banner-content .container { padding-left: 20px; padding-right: 20px; }
+      .team-banner-line { width: 42px; height: 4px; margin-bottom: 9px; }
+      .team-banner-title { font-size: clamp(24px, 7vw, 34px); letter-spacing: -.7px; margin-bottom: 7px; }
+      .team-banner-subtitle { font-size: clamp(12px, 3.2vw, 16px); max-width: 78%; }
+    }
+    .team-main { padding: 42px 0 48px; }
+    .team-heading { margin-bottom: 30px; }
+    .team-kicker {
+      display: inline-block; color: var(--blue-primary); font-size: 13px;
+      font-weight: 800; letter-spacing: 1.5px; margin-bottom: 9px;
+    }
+    .team-heading h2 { color: var(--blue-header); font-size: clamp(30px, 3.2vw, 42px); line-height: 1.18; margin-bottom: 10px; }
+    .team-heading h2 span { color: var(--blue-primary); }
+    .team-heading p { color: #475569; max-width: 720px; font-size: 16px; line-height: 1.65; margin: 0; }
+    .team-grid-modern { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; max-width: 1000px; margin: 0 auto; }
+    .team-card-modern { display: flex; flex-direction: column; min-height: 0; overflow: hidden; background: #ffffff; border: 1px solid #d9e6f5; border-radius: 18px; box-shadow: 0 10px 28px rgba(26,86,219,.07); transition: transform .2s ease, box-shadow .2s ease; }
+    .team-card-modern:hover { transform: translateY(-3px); box-shadow: 0 15px 32px rgba(26,86,219,.11); }
+    .team-photo { width: 100%; background: #ffffff; overflow: hidden; line-height: 0; display: flex; justify-content: center; padding: 24px 24px 0; box-sizing: border-box; }
+    .team-photo img { width: 64%; max-width: 290px; height: auto; display: block; object-fit: contain; object-position: center top; border: 1px solid #d9e6f5; border-radius: 12px; }
+    .team-info-modern { padding: 22px 28px 28px; display: flex; flex-direction: column; justify-content: flex-start; text-align: center; }
+    .team-role { display: inline-flex; align-self: center; align-items: center; gap: 7px; color: var(--blue-primary); background: transparent; border-radius: 0; padding: 0; font-size: 11px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 12px; }
+    .team-info-modern h3 { color: var(--blue-header); font-size: 23px; line-height: 1.2; margin-bottom: 12px; }
+    .team-info-modern p { color: #334155; font-size: 14px; line-height: 1.7; margin: 0; text-align: justify; text-justify: inter-word; }
+    .team-focus { margin-top: 34px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .team-focus-card { padding: 18px; border-radius: 14px; border: 1px solid transparent; }
+    .team-focus-card:nth-child(1) { background: #eef7ff; border-color: #dcecff; }
+    .team-focus-card:nth-child(2) { background: #eefbf6; border-color: #d9f3e8; }
+    .team-focus-card:nth-child(3) { background: #f5f0ff; border-color: #e8ddff; }
+    .team-focus-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: rgba(26,86,219,.12); color: var(--blue-primary); margin-bottom: 11px; }
+    .team-focus-card:nth-child(2) .team-focus-icon { background: rgba(15,159,115,.12); color: #0f9f73; }
+    .team-focus-card:nth-child(3) .team-focus-icon { background: rgba(112,71,216,.12); color: #7047d8; }
+    .team-focus-card h3 { color: var(--blue-header); font-size: 16px; margin-bottom: 5px; }
+    .team-focus-card p { color: #475569; font-size: 13px; line-height: 1.55; margin: 0; }
+        @media (max-width: 800px) { .team-grid-modern { grid-template-columns: 1fr; max-width: 680px; } .team-focus { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .team-main { padding: 34px 0 40px; } .team-photo { padding: 20px 20px 0; } .team-photo img { width: 76%; max-width: 280px; } .team-info-modern { padding: 22px; } }
+  </style>
+</head>
+<body>
+<header>
+<div class="container nav">
+<div class="brand">
+<a href="../index.html"><img alt="Navodix IT Solutions" class="site-logo" src="../assets/images/logo.png"/></a>
+</div>
+<nav>
+<a href="../index.html">Home</a>
+<a href="about.html">About</a>
+<a class="active" href="team.html">Leadership Team</a>
+<a href="services.html">Services</a>
+<a href="solutions.html">Solutions</a>
+<a href="contact.html">Contact</a>
+</nav>
+<a class="btn btn-primary" href="contact.html">Get in Touch <i class="fa-solid fa-chevron-right"></i></a>
+</div>
+</header>
+<section class="team-banner">
+<img alt="" class="team-banner-image" src="../assets/images/team-leadership-banner.png"/>
+<div aria-hidden="true" class="team-banner-content">
+<div class="container">
+<div class="team-banner-line"></div>
+<h1 class="team-banner-title">Our <span>Leadership Team</span></h1>
+<p class="team-banner-subtitle">Guiding vision. Building possibilities. Together.</p>
+</div>
+</div>
+</section>
+<main class="team-main">
+<div class="container">
+<div class="team-heading">
+<h2>Meet the People Behind <span>Navodix</span></h2>
+<p>Driving vision, technical innovation, and enterprise excellence at Navodix IT Solutions.</p>
+</div>
+<div class="team-grid-modern">
+<article class="team-card-modern">
+<div class="team-photo">
+<img alt="Suryanarayana Valthaje" src="../assets/images/suryanarayana-valtaje.jpeg"/>
+</div>
+<div class="team-info-modern">
+<span class="team-role"><i class="fa-solid fa-user-tie"></i> Founder - Director</span>
+<h3>Suryanarayana Valthaje</h3>
+<p>Brings over 30 years of experience in the IT industry, with extensive expertise spanning IT infrastructure services, software development, technology operations, and enterprise IT solutions. His broad industry experience supports strategic technology decisions and the delivery of practical, reliable solutions aligned with business needs.</p>
+</div>
+</article>
+<article class="team-card-modern">
+<div class="team-photo">
+<img alt="Dinesan B C" src="../assets/images/dinesan-b-c.jpeg"/>
+</div>
+<div class="team-info-modern">
+<span class="team-role"><i class="fa-solid fa-user-tie"></i> Founder - Director</span>
+<h3>Dinesan B C</h3>
+<p>Brings over 25 years of experience in the IT industry, with a strong focus on IT infrastructure, technology operations, and enterprise service delivery. His experience in managing technology environments and operational requirements enables him to drive dependable, secure, and efficient IT services while supporting the evolving needs of businesses.</p>
+</div>
+</article>
+</div>
+<div class="team-focus">
+<div class="team-focus-card">
+<div class="team-focus-icon"><i class="fa-solid fa-compass"></i></div>
+<h3>Strategic Direction</h3>
+<p>Focused leadership that connects technology decisions with business goals.</p>
+</div>
+<div class="team-focus-card">
+<div class="team-focus-icon"><i class="fa-solid fa-gears"></i></div>
+<h3>Technology Excellence</h3>
+<p>Practical expertise across infrastructure, cloud, security and managed services.</p>
+</div>
+<div class="team-focus-card">
+<div class="team-focus-icon"><i class="fa-solid fa-handshake"></i></div>
+<h3>Client Partnership</h3>
+<p>A long-term approach built around reliability, responsiveness and trust.</p>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<div class="container foot">
+<div>
+<div class="brand foot-brand"><a href="../index.html"><img alt="Navodix IT Solutions" class="site-logo foot-logo" src="../assets/images/logo.png"/></a></div>
+<p class="foot-desc">Reliable IT Infrastructure.<br/>Intelligent Solutions.<br/>Business Success.</p>
+<div class="social-links">
+<a aria-label="LinkedIn" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+<a aria-label="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+<a aria-label="X" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+<a aria-label="YouTube" href="#"><i class="fa-brands fa-youtube"></i></a>
+</div>
+</div>
+<div>
+<h4>Quick Links</h4>
+<ul>
+<li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="team.html">Leadership Team</a></li><li><a href="services.html">Services</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4>Our Services</h4>
+<ul><li>IT Infrastructure Management</li><li>Managed Services</li><li>IT Staffing &amp; Consulting</li><li>Software Development Services</li><li>Backup &amp; Disaster Recovery</li><li>Cloud Services</li></ul>
+</div>
+<div>
+<h4>Contact Info</h4>
+<p><i class="fa-solid fa-phone"></i> +91-9663693988,  +91-9632355166</p>
+<p><i class="fa-solid fa-envelope"></i> info@navodix.com</p>
+<p class="footer-address">
+<i aria-hidden="true" class="fa-solid fa-location-dot"></i>
+<span class="footer-address-text">
+<strong class="footer-company-name" style="color: var(--blue-primary);">Navodix IT Solutions Private Limited,</strong><br/>
+            No.21, (Old No.4), 1st Floor,<br/>
+            2nd A Main Road, OMBR Layout, Chikkabanasawadi,<br/>
+            Bangalore - 560043, Karnataka.
+          </span>
+</p>
+</div>
+</div>
+<div class="copy"><div class="container copy-inner"><span>© 2026 Navodix IT Solutions Private Limited. All Rights Reserved.</span><div><a href="#">Privacy Policy</a> | <a href="#">Terms &amp; Conditions</a></div></div></div>
+</footer>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>
