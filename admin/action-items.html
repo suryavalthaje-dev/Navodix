@@ -92,14 +92,14 @@
 }
 
 /* Exact column proportions from the specification */
-.action-table th:nth-child(1), .action-table td:nth-child(1) { width:30% !important; }
+.action-table th:nth-child(1), .action-table td:nth-child(1) { width:20% !important; }
 .action-table th:nth-child(2), .action-table td:nth-child(2) { width:13% !important; }
-.action-table th:nth-child(3), .action-table td:nth-child(3) { width:15% !important; }
-.action-table th:nth-child(4), .action-table td:nth-child(4) { width:7% !important; }
-.action-table th:nth-child(5), .action-table td:nth-child(5) { width:9% !important; }
-.action-table th:nth-child(6), .action-table td:nth-child(6) { width:8% !important; }
+.action-table th:nth-child(3), .action-table td:nth-child(3) { width:13% !important; }
+.action-table th:nth-child(4), .action-table td:nth-child(4) { width:13% !important; }
+.action-table th:nth-child(5), .action-table td:nth-child(5) { width:7% !important; }
+.action-table th:nth-child(6), .action-table td:nth-child(6) { width:9% !important; }
 .action-table th:nth-child(7), .action-table td:nth-child(7) { width:8% !important; }
-.action-table th:nth-child(8), .action-table td:nth-child(8) { width:10% !important; }
+.action-table th:nth-child(8), .action-table td:nth-child(8) { width:17% !important; }
 
 /* Table header: mixed case, framed blue band */
 .action-table thead th {
@@ -166,15 +166,16 @@
 .action-table tbody tr.action-due-completed td:nth-child(5),
 .action-table tbody td.action-due-completed-cell { color:#027A48 !important; font-weight:400 !important; }
 
-/* Last Updated: date first line, time second line */
+/* Last Updated: keep date and time on one line in the list. */
 .action-table td.action-updated-cell {
   padding-top:8px !important;
   padding-bottom:8px !important;
   line-height:1.15 !important;
+  white-space:nowrap !important;
 }
 .action-table .action-updated-time {
-  display:block !important;
-  margin-top:2px !important;
+  display:inline !important;
+  margin-left:5px !important;
   font-size:11px !important;
   line-height:1.05 !important;
   white-space:nowrap !important;
@@ -900,7 +901,7 @@ body.action-items-list-standard .action-table tbody tr.action-row-selected .acti
 
 /* Last Updated keeps date and time compact without increasing row height. */
 .action-table td.action-updated-cell{padding-top:7px !important;padding-bottom:7px !important;}
-.action-table .action-updated-time{font-size:11px !important;line-height:1.05 !important;margin-top:2px !important;}
+.action-table .action-updated-time{display:inline !important;font-size:11px !important;line-height:1.05 !important;margin-left:5px !important;white-space:nowrap !important;}
 
 /* Standard pagination: always retained, including an empty list. */
 .standard-list-pagination{
@@ -1204,7 +1205,7 @@ body.action-items-list-standard .action-table tbody tr:last-child td{border-bott
 body.action-items-list-standard .action-table td .action-title-text{font-size:12px !important;font-weight:400 !important;color:#1E293B !important;line-height:1.25 !important;}
 body.action-items-list-standard .action-table td .action-priority-text,body.action-items-list-standard .action-table td .action-status-text{font-size:12px !important;font-weight:400 !important;}
 body.action-items-list-standard .action-table td.action-updated-cell{padding-top:7px !important;padding-bottom:7px !important;}
-body.action-items-list-standard .action-table .action-updated-time{font-size:11px !important;line-height:1.05 !important;margin-top:2px !important;}
+body.action-items-list-standard .action-table .action-updated-time{display:inline !important;font-size:11px !important;line-height:1.05 !important;margin-left:5px !important;white-space:nowrap !important;}
 body.action-items-list-standard .action-card .table-wrap{scrollbar-width:thin;scrollbar-color:#8FA4BA #EEF3F8;}
 body.action-items-list-standard .action-card .table-wrap::-webkit-scrollbar{width:4px !important;height:4px !important;}
 body.action-items-list-standard .action-card .table-wrap::-webkit-scrollbar-track{background:#EEF3F8 !important;}
@@ -1654,15 +1655,16 @@ body.action-items-list-standard .action-summary .summary-card:nth-child(6) { bac
       <div class="columns-popover-title">Show / Hide Columns</div>
       <label class="column-option"><input type="checkbox" checked data-col="0"> Action Item</label>
       <label class="column-option"><input type="checkbox" checked data-col="1"> Project / Area</label>
-      <label class="column-option"><input type="checkbox" checked data-col="2"> Assigned To</label>
-      <label class="column-option"><input type="checkbox" checked data-col="3"> Priority</label>
-      <label class="column-option"><input type="checkbox" checked data-col="4"> Due Date</label>
-      <label class="column-option"><input type="checkbox" checked data-col="5"> Status</label>
-      <label class="column-option"><input type="checkbox" checked data-col="6"> Last Updated</label>
+      <label class="column-option"><input type="checkbox" checked data-col="2"> Primary Responsibility</label>
+      <label class="column-option"><input type="checkbox" checked data-col="3"> Secondary Responsibility</label>
+      <label class="column-option"><input type="checkbox" checked data-col="4"> Priority</label>
+      <label class="column-option"><input type="checkbox" checked data-col="5"> Due Date</label>
+      <label class="column-option"><input type="checkbox" checked data-col="6"> Status</label>
+      <label class="column-option"><input type="checkbox" checked data-col="7"> Last Updated</label>
     </div>
   </div>
   <div class="table-wrap"><table class="action-table"><thead><tr>
-    <th>Action Item</th><th>Project / Area</th><th>Assigned To</th><th>Priority</th><th>Due Date</th><th>Status</th><th>Last Updated</th>
+    <th>Action Item</th><th>Project / Area</th><th>Primary Responsibility</th><th>Secondary Responsibility</th><th>Priority</th><th>Due Date</th><th>Status</th><th>Last Updated</th>
   </tr></thead><tbody id="actionItemsTableBody"></tbody></table></div>
   </section>
 </div></main>
