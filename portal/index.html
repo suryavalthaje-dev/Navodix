@@ -36,6 +36,7 @@ button,input{font:inherit}
 .login-submit:hover:not(:disabled){filter:brightness(1.06)}
 .login-submit:active:not(:disabled){transform:translateY(1px)}
 .login-submit:disabled{opacity:.65;cursor:wait}
+#accountsButton:disabled{opacity:.42;cursor:not-allowed;filter:grayscale(.45);box-shadow:none}
 .login-error{display:none;margin-top:13px;padding:10px 12px;border:1px solid #e7c3bd;border-radius:7px;background:#fff0ee;color:#9b332b;font-size:11px;line-height:1.5;overflow-wrap:anywhere}
 .login-error.show{display:block}
 .login-hint{margin-top:16px;padding:10px 12px;border:1px solid #e5d9c6;border-radius:7px;background:#f7f0e5;color:#7b674b;font-size:10.5px;line-height:1.5}
@@ -65,7 +66,7 @@ button,input{font:inherit}
      <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
     </div>
     <div class="login-actions">
-     <button class="login-submit" id="accountsButton" type="submit" data-target="accounts">Sign in to Accounts</button>
+     <button class="login-submit" id="accountsButton" type="submit" data-target="accounts" disabled aria-disabled="true" title="Accounts sign-in is not enabled in the live release">Sign in to Accounts</button>
      <button class="login-submit" id="adminButton" type="submit" data-target="admin">Sign in to Admin</button>
     </div>
     <div class="login-error" id="loginError" role="alert" aria-live="polite"></div>
