@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function(){
       const observer=new MutationObserver(syncProfile);
       observer.observe(user,{childList:true,characterData:true,subtree:true});
       logout.className='admin-profile-menu-logout';
-      logout.innerHTML='<i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i><span>Logout</span>';
+      logout.innerHTML='<svg class="admin-profile-logout-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 17l5-5-5-5M15 12H3M12 3h6a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3h-6"/></svg><span>Logout</span>';
       logout.setAttribute('role','menuitem');
       menu.appendChild(name);
       menu.appendChild(logout);
@@ -383,11 +383,15 @@ document.addEventListener('DOMContentLoaded', function(){
           border-bottom:1px solid #e7edf1!important;color:#173653!important;
         }
         body.admin-single-level-navigation .admin-profile-menu-logout{
-          width:100%!important;display:flex!important;align-items:center!important;gap:9px!important;
-          padding:9px 10px!important;margin-top:4px!important;border:0!important;border-radius:5px!important;
-          background:#fff!important;color:#a43b3b!important;text-align:left!important;font-size:12px!important;cursor:pointer!important;
+          width:100%!important;min-height:36px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:9px!important;
+          padding:8px 10px!important;margin-top:4px!important;border:1px solid #b8cce8!important;border-radius:8px!important;
+          background:#fff!important;color:#0b55b5!important;text-align:center!important;font-size:12px!important;font-weight:500!important;cursor:pointer!important;
         }
-        body.admin-single-level-navigation .admin-profile-menu-logout:hover{background:#fff1f1!important}
+        body.admin-single-level-navigation .admin-profile-menu-logout:hover{background:#f5f9ff!important}
+        body.admin-single-level-navigation .admin-profile-logout-icon{
+          width:15px!important;height:15px!important;flex:0 0 15px!important;fill:none!important;stroke:currentColor!important;
+          stroke-width:2!important;stroke-linecap:round!important;stroke-linejoin:round!important;
+        }
         @media(max-width:1100px){
           body.admin-single-level-navigation .admin-nav{flex-wrap:wrap!important;gap:0 10px!important;padding:5px 0!important}
           body.admin-single-level-navigation .admin-brand,
