@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#082b50">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Navodix | Admin &amp; Accounts Sign In</title>
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
+<style>
+:root{--navy:#082b50;--deep:#061f3d;--teal:#087f83;--ink:#102b49;--muted:#718096;--line:#cbd7df;--cream:#fffaf2}
+*{box-sizing:border-box}
+html,body{width:100%;min-height:100%;margin:0}
+body{min-height:100vh;font-family:"Segoe UI",Arial,sans-serif;color:var(--ink);background:#062b43}
+button,input{font:inherit}
+.login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse at 15% 15%,#0c8b8b55,transparent 36%),radial-gradient(ellipse at 90% 90%,#2d6fa344,transparent 38%),linear-gradient(135deg,#062b43,#075d66 58%,#0b4055)}
+.login-shell{width:min(980px,100%);min-height:560px;display:grid;grid-template-columns:1.08fr .92fr;overflow:hidden;border:1px solid #ffffff42;border-radius:18px;background:#fff;box-shadow:0 28px 80px #031b2d70}
+.login-welcome{position:relative;display:flex;flex-direction:column;justify-content:flex-start;padding:38px 32px;color:#fff;background:linear-gradient(180deg,rgba(3,39,57,.80) 0%,rgba(3,39,57,.12) 42%,rgba(3,39,57,.58) 100%),url("assets/login-financial-analytics.png") center 58%/cover no-repeat;overflow:hidden}
+.welcome-copy{position:relative;z-index:1;width:100%;display:flex;align-items:center;justify-content:center;text-align:center;margin:0 auto}
+.welcome-copy h1{font-size:clamp(18px,2.15vw,24px);line-height:1.3;margin:0;font-weight:700;text-align:center;letter-spacing:-.35px}
+.welcome-copy h1 .welcome-line{display:block;white-space:nowrap}
+.welcome-module{position:relative;z-index:1;margin-top:12px;text-align:center;font-size:12px;letter-spacing:.22em;font-weight:650;color:#cce9e7}
+.login-form-brand{display:flex;justify-content:center;align-items:center;margin:-8px auto 18px;width:100%}
+.login-form-brand img{display:block;width:min(230px,78%);height:64px;object-fit:contain;object-position:center;background:transparent;padding:0;border:0;border-radius:0}
+.login-foot{position:absolute;left:0;right:0;bottom:16px;z-index:2;color:#718096;font-size:11px;text-align:center;padding:0 12px}
+.login-form-side{position:relative;display:flex;align-items:center;justify-content:center;padding:42px 44px 58px;background:var(--cream)}
+.login-form{width:100%;max-width:360px}
+.login-form h2{display:none}
+.login-form .sub{font-size:12px;line-height:1.5;color:var(--muted);margin:10px 0 26px;padding:0;text-align:center}
+.login-field{display:flex;flex-direction:column;gap:7px;margin:17px 0}
+.login-field label{font-size:12px;font-weight:650;color:#29445f}
+.login-field input{height:44px;width:100%;border:1px solid var(--line);border-radius:7px;padding:0 12px;background:#fff;color:#173653;font-size:13px;outline:none}
+.login-field input:focus{border-color:var(--teal);box-shadow:0 0 0 3px #087f831c}
+.login-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.login-submit{width:100%;min-height:44px;padding:9px 10px;border:0;border-radius:7px;background:linear-gradient(100deg,#087f83,#075d66);color:#fff;font-size:12px;font-weight:700;box-shadow:0 4px 10px #075d6626;transition:filter .15s,transform .15s}
+.login-submit:hover:not(:disabled){filter:brightness(1.06)}
+.login-submit:active:not(:disabled){transform:translateY(1px)}
+.login-submit:disabled{opacity:.65;cursor:wait}
+.login-error{display:none;margin-top:13px;padding:10px 12px;border:1px solid #e7c3bd;border-radius:7px;background:#fff0ee;color:#9b332b;font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+.login-error.show{display:block}
+.login-hint{margin-top:16px;padding:10px 12px;border:1px solid #e5d9c6;border-radius:7px;background:#f7f0e5;color:#7b674b;font-size:10.5px;line-height:1.5}
+@media(max-width:700px){.login-screen{padding:12px}.login-shell{grid-template-columns:1fr;min-height:0;max-width:460px}.login-welcome{padding:22px 18px;min-height:150px}.welcome-copy h1{font-size:clamp(16px,4.2vw,20px);line-height:1.3}.welcome-module{font-size:9px;letter-spacing:.16em}.login-foot{display:block;bottom:12px;font-size:10px}.login-form-side{padding:24px 24px 48px}.login-form-brand{margin-bottom:14px}.login-form-brand img{height:52px;width:min(210px,78%)}.login-form .sub{margin-bottom:18px}}
+@media(max-width:380px){.login-form h2{font-size:19px;letter-spacing:-.3px}.login-actions{grid-template-columns:1fr}.login-submit{min-height:42px}}
+</style>
+</head>
+<body>
+<section class="login-screen" aria-label="Navodix Admin and Accounts sign in">
+ <div class="login-shell">
+  <div class="login-welcome">
+   <div class="welcome-copy">
+    <h1><span class="welcome-line">Welcome to</span><span class="welcome-line">Navodix IT Solutions Pvt. Ltd.</span></h1>
+   </div>
+   <div class="welcome-module">ADMIN &amp; ACCOUNTS MANAGEMENT</div>
+  </div>
+  <div class="login-form-side">
+   <form class="login-form" id="loginForm" novalidate>
+    <div class="login-form-brand"><img src="../assets/images/logo.png" alt="Navodix IT Solutions Private Limited"></div>
+    <p class="sub">Sign in once to continue to your authorised Admin or Accounts workspace.</p>
+    <div class="login-field">
+     <label for="loginEmail">Email address</label>
+     <input id="loginEmail" name="email" type="email" autocomplete="username" placeholder="Email address" required>
+    </div>
+    <div class="login-field">
+     <label for="loginPassword">Password</label>
+     <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+    </div>
+    <div class="login-actions">
+     <button class="login-submit" id="accountsButton" type="submit" data-target="accounts">Sign in to Accounts</button>
+     <button class="login-submit" id="adminButton" type="submit" data-target="admin">Sign in to Admin</button>
+    </div>
+    <div class="login-error" id="loginError" role="alert" aria-live="polite"></div>
+    <div class="login-hint">Use your Navodix login credentials. Access is checked separately for the portal you select.</div>
+   </form>
+   <div class="login-foot">© Navodix IT Solutions Private Limited</div>
+  </div>
+ </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../admin/js/config.js"></script>
+<script src="../admin/js/supabase-client.js"></script>
+<script src="js/portal.js"></script>
+</body>
+</html>
